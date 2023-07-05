@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{4543B91F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lightspeed.Api", "Lightspeed.Api\Lightspeed.Api.csproj", "{937D5B24-1DB6-4B87-847C-B7D6D6994939}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lightspeed.Examples", "Lightspeed.Examples\Lightspeed.Examples.csproj", "{C004FBA1-E8EB-49AA-91BE-6D6BF73D34EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,11 +27,16 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{937D5B24-1DB6-4B87-847C-B7D6D6994939} = {25716BFA-20A1-4255-AD14-68B60B65203A}
+		{C004FBA1-E8EB-49AA-91BE-6D6BF73D34EE} = {7944039D-AAEE-4180-AF30-BF55CF6BC9F7}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{937D5B24-1DB6-4B87-847C-B7D6D6994939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{937D5B24-1DB6-4B87-847C-B7D6D6994939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{937D5B24-1DB6-4B87-847C-B7D6D6994939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{937D5B24-1DB6-4B87-847C-B7D6D6994939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C004FBA1-E8EB-49AA-91BE-6D6BF73D34EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C004FBA1-E8EB-49AA-91BE-6D6BF73D34EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C004FBA1-E8EB-49AA-91BE-6D6BF73D34EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C004FBA1-E8EB-49AA-91BE-6D6BF73D34EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
