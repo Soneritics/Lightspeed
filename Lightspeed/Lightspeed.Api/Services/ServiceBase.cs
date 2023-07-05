@@ -50,6 +50,19 @@ public abstract class ServiceBase
         ProcessHttpHeaders(apiResult);
         return await GetProcessedResult<TResult>(apiResult);
     }
+    
+    /// <summary>
+    /// Call an API endpoint without expecting a result.
+    /// </summary>
+    /// <param name="httpMethod">The HTTP method.</param>
+    /// <param name="endPoint">The end point.</param>
+    /// <param name="post">The post.</param>
+    public async Task CallApi(HttpMethod httpMethod, string endPoint, object? post = null)
+    {
+        var request = await GetHttpRequestMessage(httpMethod, endPoint, post);
+        var apiResult = await _httpClient.SendAsync(request);
+        ProcessHttpHeaders(apiResult);
+    }
 
     /// <summary>
     /// Gets the HTTP request message.

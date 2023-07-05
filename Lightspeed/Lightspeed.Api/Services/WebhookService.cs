@@ -1,4 +1,5 @@
 ﻿using Lightspeed.Api.Authorization;
+using Lightspeed.Api.Models.Requests;
 using Lightspeed.Api.Models.Responses.Webhooks;
 using Lightspeed.Api.Services.Interfaces;
 
@@ -15,5 +16,21 @@ public class WebhookService : ServiceBase, IWebhookService
         return await GetApiResult<WebhookList>(
             HttpMethod.Get,
             "/webhooks.json") ?? new WebhookList();
+    }
+
+    public async Task DeleteWebhookAsync(int webhookId)
+    {
+        await CallApi(HttpMethod.Delete, $"/webhooks/{webhookId}.json");
+    }
+
+    public async Task CreateWebhookAsync(WebhookRequest webhookRequest)
+    {
+        await CallApi(
+            HttpMethod.Post,
+            $"/webhooks.json",
+            new
+            {
+                webhook = webhookRequest
+            });
     }
 }
