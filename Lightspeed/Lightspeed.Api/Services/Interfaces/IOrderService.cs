@@ -8,4 +8,6 @@ public interface IOrderService
     Task<OrdersList> GetOrdersAsync(OrdersRequest ordersRequest);
     
     Task<Order> GetOrderAsync(int orderId);
+
+    Task ShipAsync(int orderId);
 }

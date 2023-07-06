@@ -69,4 +69,18 @@ public class OrderService : ServiceBase, IOrderService
         var result = await GetApiResult<OrderResponse>(HttpMethod.Get, $"/orders/{orderId}.json");
         return result?.Order ?? throw new NotFoundException();
     }
+
+    public async Task ShipAsync(int orderId)
+    {
+        await CallApi(
+            HttpMethod.Post,
+            $"/orders/{orderId}.json",
+            new
+            {
+                order = new
+                {
+                    shipmentStatus = "shipped"
+                }
+            });
+    }
 }
