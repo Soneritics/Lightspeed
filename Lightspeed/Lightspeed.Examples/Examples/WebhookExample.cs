@@ -6,6 +6,7 @@ namespace Lightspeed.Examples.Examples;
 public class WebhookExample : ExampleBase, IExample
 {
     private const string apiUrl = "https://example.com/webhook/orders/test";
+    
     public WebhookExample(ApiSecrets apiSecrets) : base(apiSecrets)
     {
     }

@@ -11,7 +11,7 @@ namespace Lightspeed.Api.Services;
 
 public abstract class ServiceBase
 {
-    public static RateLimits? RateLimits;
+    public static RateLimits? RateLimits { get; protected set; }
 
     private readonly ApiSecrets _apiSecrets;
 

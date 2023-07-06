@@ -22,4 +22,7 @@ public class LightspeedApi
 
     private IWebhookService? _webhookService;
     public IWebhookService WebhookService => _webhookService ??= new WebhookService(_apiSecrets, _httpClient);
+
+    private IOrderService? _orderService;
+    public IOrderService OrderService => _orderService ??= new OrderService(_apiSecrets, _httpClient);
 }
