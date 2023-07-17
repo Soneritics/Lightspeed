@@ -72,9 +72,8 @@ public class OrderService : ServiceBase, IOrderService
 
     public async Task ShipAsync(int orderId)
     {
-        await CallApi(
-            HttpMethod.Post,
-            $"/orders/{orderId}.json",
+        await UpdateOrderAsync(
+            orderId,
             new
             {
                 order = new
@@ -82,5 +81,49 @@ public class OrderService : ServiceBase, IOrderService
                     shipmentStatus = "shipped"
                 }
             });
+    }
+
+    public async Task PayAsync(int orderId)
+    {
+        await UpdateOrderAsync(
+            orderId,
+            new
+            {
+                order = new
+                {
+                    paymentStatus = "paid"
+                }
+            });
+    }
+
+    public async Task CancelAsync(int orderId)
+    {
+        await UpdateOrderAsync(
+            orderId,
+            new
+            {
+                order = new
+                {
+                    status = "cancelled"
+                }
+            });
+    }
+
+    public async Task OpenAsync(int orderId)
+    {
+        await UpdateOrderAsync(
+            orderId,
+            new
+            {
+                order = new
+                {
+                    status = "new"
+                }
+            });
+    }
+
+    private async Task UpdateOrderAsync(int orderId, object data)
+    {
+        await CallApi(HttpMethod.Post, $"/orders/{orderId}.json", data);
     }
 }

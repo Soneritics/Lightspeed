@@ -10,4 +10,10 @@ public interface IOrderService
     Task<Order> GetOrderAsync(int orderId);
 
     Task ShipAsync(int orderId);
+
+    Task PayAsync(int orderId);
+    
+    Task CancelAsync(int orderId);
+    
+    Task OpenAsync(int orderId);
 }

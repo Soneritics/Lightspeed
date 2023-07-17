@@ -25,4 +25,7 @@ public class LightspeedApi
 
     private IOrderService? _orderService;
     public IOrderService OrderService => _orderService ??= new OrderService(_apiSecrets, _httpClient);
+
+    private IShipmentService? _shipmentService;
+    public IShipmentService ShipmentService => _shipmentService ??= new ShipmentService(_apiSecrets, _httpClient);
 }
