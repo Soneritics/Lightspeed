@@ -24,7 +24,7 @@ public class ShipmentService : ServiceBase, IShipmentService
         bool notifyCustomer = true)
     {
         await CallApi(
-            HttpMethod.Post,
+            HttpMethod.Put,
             $"/shipments/{shipmentId}.json",
             new
             {

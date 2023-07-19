@@ -124,6 +124,6 @@ public class OrderService : ServiceBase, IOrderService
 
     private async Task UpdateOrderAsync(int orderId, object data)
     {
-        await CallApi(HttpMethod.Post, $"/orders/{orderId}.json", data);
+        await CallApi(HttpMethod.Put, $"/orders/{orderId}.json", data);
     }
 }
