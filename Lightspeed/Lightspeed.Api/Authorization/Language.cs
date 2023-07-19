@@ -9,6 +9,17 @@ public class Language
         _languageCode = languageCode;
     }
 
+    public static Language FromString(string languageCode)
+    {
+        return languageCode.ToLower() switch
+        {
+            "nl" => new Language(LanguageCode.Nl),
+            "en" => new Language(LanguageCode.En),
+            "de" => new Language(LanguageCode.De),
+            _ => throw new ArgumentOutOfRangeException()
+        };
+    }
+    
     public override string ToString()
     {
         return GetLanguageCode();
@@ -20,6 +31,7 @@ public class Language
         {
             LanguageCode.Nl => "nl",
             LanguageCode.En => "en",
+            LanguageCode.De => "de",
             _ => throw new ArgumentOutOfRangeException()
         };
     }
@@ -27,6 +39,7 @@ public class Language
     public enum LanguageCode
     {
         Nl,
-        En
+        En,
+        De
     }
 }
