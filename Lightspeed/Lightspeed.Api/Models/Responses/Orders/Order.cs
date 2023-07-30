@@ -51,6 +51,7 @@ public class Order
     public Country? AddressBillingCountry { get; set; }
     
     public string AddressShippingCompany { get; set; } = string.Empty;
+    public string AddressShippingName { get; set; } = string.Empty;
     public string AddressShippingStreet { get; set; } = string.Empty;
     public string AddressShippingStreet2 { get; set; } = string.Empty;
     public string AddressShippingNumber { get; set; } = string.Empty;

@@ -4,7 +4,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>Lightspeed.Api</PackageId>
-        <Version>1.5.0</Version>
+        <Version>1.6.0</Version>
         <Authors>Soneritics</Authors>
         <Description>API for Lightspeed HQ API</Description>
         <IsPackable>true</IsPackable>
