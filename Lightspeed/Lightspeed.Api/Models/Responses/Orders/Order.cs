@@ -102,9 +102,9 @@ public class Order
     public string Memo { get; set; } = string.Empty;
     public Language? Language { get; set; }
     
-    public Embedded<Customer>? Customer { get; set; }
-    public Embedded<List<Invoice>>? Invoices { get; set; }
-    public Embedded<List<Shipment>>? Shipments { get; set; }
-    public Embedded<List<OrderedProduct>>? Products { get; set; }
-    public Embedded<List<Metafield>>? Metafields { get; set; }
+    public EmbeddedGeneric<Customer>? Customer { get; set; }
+    public EmbeddedGeneric<List<Invoice>>? Invoices { get; set; }
+    public EmbeddedGeneric<List<Shipment>>? Shipments { get; set; }
+    public EmbeddedGeneric<List<OrderedProduct>>? Products { get; set; }
+    public EmbeddedGeneric<List<Metafield>>? Metafields { get; set; }
 }

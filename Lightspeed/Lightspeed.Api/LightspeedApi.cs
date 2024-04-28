@@ -26,6 +26,21 @@ public class LightspeedApi
     private IOrderService? _orderService;
     public IOrderService OrderService => _orderService ??= new OrderService(_apiSecrets, _httpClient);
 
+    private IProductService? _productService;
+    public IProductService ProductService => _productService ??= new ProductService(_apiSecrets, _httpClient);
+
+    private ICategoryService? _categoryService;
+    public ICategoryService CategoryService => _categoryService ??= new CategoryService(_apiSecrets, _httpClient);
+
+    private ICategoryProductService? _categoryProductService;
+    public ICategoryProductService CategoryProductService => _categoryProductService ??= new CategoryProductService(_apiSecrets, _httpClient);
+    
     private IShipmentService? _shipmentService;
     public IShipmentService ShipmentService => _shipmentService ??= new ShipmentService(_apiSecrets, _httpClient);
+    
+    private IVariantService? _variantService;
+    public IVariantService VariantService => _variantService ??= new VariantService(_apiSecrets, _httpClient);
+    
+    private IRedirectService? _redirectService;
+    public IRedirectService RedirectService => _redirectService ??= new RedirectService(_apiSecrets, _httpClient);
 }

@@ -1,6 +1,6 @@
 namespace Lightspeed.Api.Models.Responses.Shipments;
 
-public class ShipmentResponse
+public class ShipmentContainer
 {
     public Shipment? Shipment { get; set; }
 }

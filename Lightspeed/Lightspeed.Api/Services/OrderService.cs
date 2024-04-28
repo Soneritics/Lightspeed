@@ -66,7 +66,7 @@ public class OrderService : ServiceBase, IOrderService
 
     public async Task<Order> GetOrderAsync(int orderId)
     {
-        var result = await GetApiResult<OrderResponse>(HttpMethod.Get, $"/orders/{orderId}.json");
+        var result = await GetApiResult<OrderContainer>(HttpMethod.Get, $"/orders/{orderId}.json");
         return result?.Order ?? throw new NotFoundException();
     }
 

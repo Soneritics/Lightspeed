@@ -1,7 +1,6 @@
 ﻿namespace Lightspeed.Api.Models.Generic;
 
-public class Embedded<T>
-    where T : new()
+public class Embedded
 {
-    public EmbeddedResource<T> Resource { get; set; } = new ();
+    public EmbeddedResource Resource { get; set; } = new ();
 }

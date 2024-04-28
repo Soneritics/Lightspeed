@@ -13,7 +13,7 @@ public class ShipmentService : ServiceBase, IShipmentService
 
     public async Task<Shipment> GetShipmentAsync(int shipmentId)
     {
-        var result = await GetApiResult<ShipmentResponse>(HttpMethod.Get, $"/shipments/{shipmentId}.json");
+        var result = await GetApiResult<ShipmentContainer>(HttpMethod.Get, $"/shipments/{shipmentId}.json");
         return result?.Shipment ?? throw new NotFoundException();
     }
 
