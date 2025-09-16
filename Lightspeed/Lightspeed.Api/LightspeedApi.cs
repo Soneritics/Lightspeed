@@ -29,6 +29,9 @@ public class LightspeedApi
     private IProductService? _productService;
     public IProductService ProductService => _productService ??= new ProductService(_apiSecrets, _httpClient);
 
+    private IProductMetafieldService? _productMetafieldService;
+    public IProductMetafieldService ProductMetafieldService => _productMetafieldService ??= new ProductMetafieldService(_apiSecrets, _httpClient);
+
     private ICategoryService? _categoryService;
     public ICategoryService CategoryService => _categoryService ??= new CategoryService(_apiSecrets, _httpClient);
 

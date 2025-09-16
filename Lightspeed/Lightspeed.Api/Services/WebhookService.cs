@@ -27,7 +27,7 @@ public class WebhookService : ServiceBase, IWebhookService
     {
         await CallApi(
             HttpMethod.Post,
-            $"/webhooks.json",
+            "/webhooks.json",
             new
             {
                 webhook = webhookRequest
