@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-dotnet@v1
 
       - name: Restore dependencies
-        run: nuget restore Lightspeed
+        run: dotnet restore Lightspeed
           
       - name: Build solution and generate NuGet package
         run: dotnet pack Lightspeed/Lightspeed.Api -c Release -o out
