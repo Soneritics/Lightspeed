@@ -86,7 +86,7 @@ public class Order
     public decimal ShipmentPriceExcl { get; set; }
     public decimal ShipmentPriceIncl { get; set; }
     public string ShipmentTitle { get; set; } = string.Empty;
-    public object? ShipmentData { get; set; }
+    public Dictionary<string, object>? ShipmentData { get; set; }
     
     public List<TaxRate> TaxRates { get; set; } = new();
     public DateTime? DeliveryDate { get; set; }

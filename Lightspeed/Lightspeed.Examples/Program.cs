@@ -20,8 +20,9 @@ do
     Console.WriteLine("Pick an example:");
     Console.WriteLine(" 0. Exit");
     Console.WriteLine(" 1. WebhookExample");
-    Console.WriteLine(" 2. OrderExample");
-    Console.WriteLine(" 3. ShipmentExample");
+    Console.WriteLine(" 2. OrderOverviewExample");
+    Console.WriteLine(" 3. OrderByIdExample");
+    Console.WriteLine(" 4. ShipmentExample");
 
     var input = Console.ReadLine();
     switch (input)
@@ -32,11 +33,16 @@ do
             break;
         
         case "2":
-            var orderExample = new OrderExample(apiSecrets);
+            var orderExample = new OrderOverviewExample(apiSecrets);
             await orderExample.RunAsync();
             break;
         
         case "3":
+            var orderByIdExample = new OrderByIdExample(apiSecrets);
+            await orderByIdExample.RunAsync();
+            break;
+        
+        case "4":
             var shipmentExample = new ShipmentExample(apiSecrets);
             await shipmentExample.RunAsync();
             break;

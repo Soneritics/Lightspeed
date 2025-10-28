@@ -2,18 +2,14 @@ using Lightspeed.Api.Authorization;
 
 namespace Lightspeed.Examples.Examples;
 
-public class ShipmentExample : ExampleBase, IExample
+public class ShipmentExample(ApiSecrets apiSecrets) : ExampleBase(apiSecrets), IExample
 {
-    public ShipmentExample(ApiSecrets apiSecrets) : base(apiSecrets)
-    {
-    }
-
     public async Task RunAsync()
     {
         Console.Write("Order or shipment id: ");
         var id = Console.ReadLine();
 
-        await RunExampleWithIdAsync(id);
+        await RunExampleWithIdAsync(id!);
         
         Console.Write("\nPress any key to continue...");
         Console.ReadKey();

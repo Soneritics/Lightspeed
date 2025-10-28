@@ -3,12 +3,8 @@ using Lightspeed.Api.Models.Requests;
 
 namespace Lightspeed.Examples.Examples;
 
-public class OrderExample : ExampleBase, IExample
+public class OrderOverviewExample(ApiSecrets apiSecrets) : ExampleBase(apiSecrets), IExample
 {
-    public OrderExample(ApiSecrets apiSecrets) : base(apiSecrets)
-    {
-    }
-
     public async Task RunAsync()
     {
         var orderId = await FetchAllOrders();
@@ -36,6 +32,6 @@ public class OrderExample : ExampleBase, IExample
         var order = await Api.OrderService.GetOrderAsync(orderId);
 
         Console.WriteLine($"Order {orderId} fetched.");
-        Console.WriteLine($"Order {orderId} has {order.Products.Resource.Embedded.Count} order lines.");
+        Console.WriteLine($"Order {orderId} has {order.Products?.Resource.Embedded.Count ?? 0} order lines.");
     }
 }
